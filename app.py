@@ -25,7 +25,9 @@ cors = CORS(app)
 app.config["CORS-HEADERS"] = "Content-Type"
 
 host = os.getenv("MONGO_URI")
+print("Connecting to MongoDB...")
 connect(db='emrgcallnew', host=host)
+print("Connected to MongoDB!")
 
 
 def call_again():
