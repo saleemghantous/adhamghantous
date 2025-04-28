@@ -24,7 +24,7 @@ app = Flask(__name__, static_folder="build")
 cors = CORS(app)
 app.config["CORS-HEADERS"] = "Content-Type"
 
-host = os.getenv("MONGO_URI")
+host = os.getenv("MONGO_DB_URL")
 print("Connecting to MongoDB...")
 connect(db='emrgcallnew', host=host)
 print("Connected to MongoDB!")
