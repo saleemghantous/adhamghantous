@@ -140,7 +140,8 @@ def get_report():
 
 
 # app.run(port=5050, debug=True)
-app.run(debug=False)
+# app.run(debug=False)
 
 # port = int(os.environ.get('PORT', 5050))  # Get the port from the environment or use 5000
 # app.run( port=port)
+app.run(host='0.0.0.0')  # Run the app on the server's default port
