@@ -182,9 +182,9 @@ def handle_key(data):
         report_json_data["declined_list"].append(user_data[0])
     elif digit_pressed == '3':
         twiml_response.play(mp3_dict[f"{alert_target}_{alert_type}_res_3"])
-        user_data[0] = [item for item in report_json_data["no_answer_list"]
+        user_data = [item for item in report_json_data["no_answer_list"]
                      if item["phone"] == data["Called"]]
-        user_data["date"] = get_current_time_in_israel()
+        user_data[0]["date"] = get_current_time_in_israel()
         report_json_data["no_answer_list"] = [
             item for item in report_json_data["no_answer_list"]if item["phone"] != data["Called"]]
         report_json_data["working_list"].append(user_data[0])
